@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{subject}}</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .background-head{
+            background-color: {{color}};
+            width:100%;
+            height: 10rem;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            z-index: -1;
+        }
+        .background-head img {
+            position: absolute;
+            width: 20rem;
+            max-width:250px;
+            min-width:200px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .qr-code-section {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .qr-code-section img {
+            width: 20rem;
+            max-width: 80%;
+            height: auto;
+            border: 0.3rem solid {{color}};
+        }
+
+        .email-container {
+            width: 90%;
+            max-width: 50rem;
+            min-width: 25rem;
+            margin: 2rem auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .email-header {
+            background-color: #ffffff;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .email-header img{
+            width: 5rem;
+            margin-top: 0;
+        }
+        .email-header2 {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.5rem;
+            color: #333333;
+            line-height: 1.5rem;
+        }
+        .email-header2 img{
+            position: absolute;
+            width: 25vw;
+            max-width:250px;
+            min-width:200px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .email-body {
+            padding: 1rem;
+            color: #333333;
+            line-height: 1.5rem;
+        }
+        .email-content {
+            margin: 2rem 0;
+        }
+        .email-footer {
+            background-color: #f0f0f0;
+            color: #666666;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-head">
+        <!-- We reference the embedded CID for the IPH logo -->
+        <img src="cid:iphLogo-image" alt="IPH Logo">
+    </div>
+    <div class="email-container">
+        <!-- Header Section -->
+        <div class="email-header">
+            <!-- The child template can pass icon_cid and icon_alt -->
+            <img src="cid:{{icon_cid}}" alt="{{icon_alt}}">
+            <div class="title">{{title}}</div>
+        </div>
+
+        <!-- Body Section -->
+        <div class="email-body">
+            {{{ body }}} 
+            {{!-- The child template (role_change.hbs, etc.) content goes here --}}
+        </div>
+
+        <!-- Footer Section -->
+        <div class="email-footer">
+            <p>Best Regards,<br> IPH Team</p>
+            <p>&copy; 2023 Intania Production House. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

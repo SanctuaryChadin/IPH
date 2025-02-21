@@ -1,0 +1,25 @@
+{{!-- lib/email/templates/reservation_request_accept.hbs --}}
+{{!-- This is inside the main layout by default (main.hbs) --}}
+
+<h2 style="color:{{color}};">{{title}}</h2>
+
+<p>Dear {{name}},</p>
+<div class="email-content">
+  <p>We have accepted your order. Here are the details:</p>
+  <ul>
+    <li>Item: {{itemName}}</li>
+    <li>Receiving Appointment: {{receiveDate}} {{receiveTime}}</li>
+    <li>Returning Appointment: {{returnDate}} {{returnTime}}</li>
+    <li>Your Staff Name: {{staffName}}</li>
+    <li>Your Staff Email: {{staffEmail}}</li>
+    <li>Your Staff Line ID: {{staffLineId}}</li>
+    <li>Your Staff Phone: {{staffTel}}</li>
+  </ul>
+  <p>Here is your QR code: (please show this on receiving day)</p>
+  <div class="qrBox">
+  <div class="qr-code-section">
+    <img src="cid:qr-code" alt="QR Code">
+  </div>
+</div>
+</div>
+<p>Thank you for choosing our service!</p>

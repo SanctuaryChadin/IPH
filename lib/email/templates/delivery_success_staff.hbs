@@ -1,0 +1,22 @@
+<h2 style="color:{{color}};">{{title}}</h2>
+<p>Dear {{name}},</p>
+<div class="email-content">
+  <p>You have successfully delivered the user’s order. <strong>If you have not actually delivered it, please contact the user or admin immediately.</strong></p>
+  <p>Order details:</p>
+  <ul>
+    <li>User Name: {{userName}}</li>
+    <li>User Phone Number: {{userTel}}</li>
+    <li>User Line ID: {{userLineId}}</li>
+    <li>Item: {{itemName}}</li>
+    <li>Receiving Appointment: {{receiveDate}} {{receiveTime}}</li>
+    <li>Returning Appointment: {{returnDate}} {{returnTime}}</li>
+  </ul>
+  <p>Here is your QR code for the return day:</p>
+  <div class="qrBox">
+    <div class="qr-code-section">
+      <img src="cid:qr-code" alt="QR Code">
+    </div>
+  </div>
+  <p>Please coordinate with the user for the return appointment. Contact admin if any issue arises.</p>
+</div>
+<p>Thank you for your dedication!</p>
