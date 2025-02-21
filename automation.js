@@ -11,7 +11,7 @@ dotenv.config(); // อ่านไฟล์ .env
 
 import dayjs from 'dayjs';
 
-import {pool} from './lib/db.js'; // สมมติ export default
+import {pool} from './lib/db.js'; 
 import { sendEmailByCase } from './lib/email/sendEmail.js'; 
 
 console.log(process.env.SMTP_HOST, process.env.SMTP_PORT);
